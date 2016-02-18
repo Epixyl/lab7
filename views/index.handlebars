@@ -26,6 +26,22 @@
 		</div>
 
 		<h4>Projects</h4>
+		{{#if grid}}
+		{{#each projects}}
+			<div class="row">
+<div class="project col-md-4" id="{{id}}">
+	<div class="thumbnail">
+		<a href="/project/{{id}}">
+			<img src="images/{{image}}" alt="Lorem Pixel image">
+			<h4>{{title}}</h4>
+		</a>
+		<div class="details"></div>
+	<button class="btn btn-default likeBtn">Like</button>						
+	</div>
+</div>
+		{{/each}}
+
+		{{else}}
 		{{#each projects}}
 			<div class="project" id="{{id}}">
 				<div class="thumbnail">
@@ -38,10 +54,12 @@
 				</div>
 			</div>
 		{{/each}}
+		{{/if}}
 
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/introHCI.js"></script>
+	{{> googleAnalytics}}
 </body>
 </html>
